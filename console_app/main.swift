@@ -8,4 +8,16 @@
 
 import Foundation
 
-print("Hello, World!")
+guard var url = URL(string: "https://whatthecommit.com") else { exit(0) }
+
+let session = URLSession.shared
+session.dataTask(with: url) { (data, response, error) in
+    if let response = response {
+        print(response)
+        exit(0)
+    }
+}.resume()
+
+while (true) {
+    
+}
